@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> coffee </title>
+  <title> CofFeeFind </title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="css/styleqa.css" rel="stylesheet"/>
@@ -17,6 +17,9 @@
 <body>
 
   <section id = "top-box" style = "background-color: #FF5733; margin-top:0px">
+    <div class = "align-center">
+      <a class="navbar-brand" href="#"> <img src = "logo-1.png" alt =""> </a>
+    </div>
     <h1 class="align-center"> Find a coffee shop...</h1>
     <div class="input-group md-form form-sm form-2 pl-0" id="search-box">
       <input class="form-control my-0 py-1"  type="text" onkeyup="myFunction()" placeholder="Search" id="search-bar" >
@@ -36,7 +39,7 @@
       </div>
     </div>
     <ul id="myUL" style = "display:none;" >
-      <li><a href="#" id="li1">Tous les Joures</a></li>
+      <li><a href="#" id ="li1">Tous les Joures</a></li>
       <li><a href="#" id ="li2">Dunkin Donuts</a></li>
 
       <li><a href="#" id ="li3">Twosome Place</a></li>
@@ -45,7 +48,7 @@
       <li><a href="#" id ="li5">Smoothie King</a></li>
       <li><a href="#" id ="li6">Droptop</a></li>
       <li><a href="#" id ="li7">Angel in the U.S.</a></li>
-      <li><a href="#"id ="li8" action = "food.html" onclick = "questionFunction('food2')">Mango Six</a></li>
+      <li><a href="#" id ="li8" action = "food.html" onclick = "questionFunction('food2')">Mango Six</a></li>
     </ul>
     <div id="noResults" style="display:none;">No results found</div>
 

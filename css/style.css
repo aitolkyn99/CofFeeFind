@@ -9,3 +9,10 @@
 
 .text-center {
 }
+
+.navbar-header {
+  left:calc(50% - 45px);
+  position: absolute;
+  padding:0;
+  top:-30px;
+}
