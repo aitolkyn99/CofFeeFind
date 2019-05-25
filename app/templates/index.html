@@ -2,10 +2,11 @@
 <html>
 <head>
   <title> CofFeeFind </title>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  
+  <link href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="css/styleqa.css" rel="stylesheet"/>
-  <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename = 'css/styleqa.css') }}" rel="stylesheet"/>
+  <link href="{{ url_for('static', filename = 'jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css') }}" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
@@ -18,7 +19,7 @@
 
   <section id = "top-box" style = "background-color: #FF5733; margin-top:0px">
     <div class = "align-center">
-      <a class="navbar-brand" href="#"> <img src = "logo-1.png" alt =""> </a>
+      <a class="navbar-brand" href="#"> <img src = "{{ url_for('static', filename='logo-1.png') }}" alt =""> </a>
     </div>
     <h1 class="align-center"> Find a coffee shop...</h1>
     <div class="input-group md-form form-sm form-2 pl-0" id="search-box">
@@ -80,15 +81,17 @@
 
   </div>
 
+<script> 
+  var menus = `{{ menus_str }}`
+  var customers = `{{ customers_str }}`
+  var coffeeShops = `{{ coffee_shops_str }}`;
 
-
-
-
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/category.js"></script>
-<script src="js/qanda.js"></script>
-<script src="jquery/js/jquery-1.9.0.min.js"></script>
-<script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+</script>
+<script src="{{ url_for('static', filename = 'js/jquery.min.js') }}" ></script>
+<script src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}" ></script>
+<script src="{{ url_for('static', filename = 'jquery/js/jquery-1.9.0.min.js') }}" ></script>
+<script src="{{ url_for('static', filename = 'jquery/js/jquery-ui-1.10.0.custom.min.js') }}" ></script>
+<script src="{{ url_for('static', filename = 'js/main.js') }}" ></script>
 </body>
+
 </html>
