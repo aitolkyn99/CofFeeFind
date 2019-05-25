@@ -4,6 +4,7 @@ body {
   /* font-family: sans-serif; */
 }
 
+
 a {
   color: black;
 }
@@ -14,6 +15,7 @@ a:hover {
 }
 
 #myUL {
+
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -50,17 +52,8 @@ a:hover {
     margin-right: 10%;
 }
 
-.column {
-  float: left;
-  width: 50%;
-}
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+
 
 .align-center {
   text-align: center;
@@ -102,10 +95,6 @@ h1 {
   border: none;
 }
 
-#search-box {
-  width: 75%;
-  margin-left: 12.5%;
-}
 
 #top-box {
   padding: 2em;
@@ -129,17 +118,5 @@ h1 {
   font-size: 16px;
 }
 
-.list-group-item{
-  background-color: #F2F3F1;
-}
 
-.menu td, .menu tr {
-  display:inline-block;
-}
 
-.menu td:first-child {
-  width: 70%;
-}
-.checked {
-  color: orange;
-}
