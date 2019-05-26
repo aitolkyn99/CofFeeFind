@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
   <title> CofFeeFind </title>
   
   <link href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="{{ url_for('static', filename = 'css/styleqa.css') }}" rel="stylesheet"/>
   <link href="{{ url_for('static', filename = 'jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css') }}" rel="stylesheet">
+
   <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
 </head>
 
 
@@ -18,9 +22,7 @@
 <body>
 
   <section id = "top-box" style = "background-color: #FF5733; margin-top:0px">
-    <div class = "align-center">
-      <a class="navbar-brand" href="#"> <img src = "{{ url_for('static', filename='logo-1.png') }}" alt =""> </a>
-    </div>
+
     <h1 class="align-center"> Find a coffee shop...</h1>
     <div class="input-group md-form form-sm form-2 pl-0" id="search-box">
       <input class="form-control my-0 py-1"  type="text" onkeyup="myFunction()" placeholder="Search" id="search-bar" >
@@ -40,7 +42,9 @@
       </div>
     </div>
     <ul id="myUL" style = "display:none;" >
+
       <li><a href="#" id ="li1">Tous les Joures</a></li>
+
       <li><a href="#" id ="li2">Dunkin Donuts</a></li>
 
       <li><a href="#" id ="li3">Twosome Place</a></li>
@@ -48,38 +52,162 @@
 
       <li><a href="#" id ="li5">Smoothie King</a></li>
       <li><a href="#" id ="li6">Droptop</a></li>
-      <li><a href="#" id ="li7">Angel in the U.S.</a></li>
-      <li><a href="#" id ="li8" action = "food.html" onclick = "questionFunction('food2')">Mango Six</a></li>
+
+      <li><a href="#" id ="li7">Angel in US</a></li>
+      <li><a href="#" id ="li8" action = "" onclick = "questionFunction('food2')">Mango Six</a></li>
+
+
     </ul>
     <div id="noResults" style="display:none;">No results found</div>
 
   </section>
 
+
+  <iframe class = "align-center" id = "map"
+    width="500"
+    height="400"
+    frameborder="1" style="border:1"
+    src="" allowfullscreen>
+  </iframe>
+
   <div class="container-fluid">
-    <div class = "row" style = "width: 80%; margin-left:10%; ">
-      <div class="col-md-6" style = "border: 1px solid grey">
-        <h3> NAME OF THE COFFEE SHOP </h3>
-      </div>
-      <div class="col-md-3" style = "border: 1px solid grey">
-        <h3>LOCATION </h3>
-      </div>
-      <div class="col-md-3" style = "border: 1px solid grey">
-        <h3> RATING </h3>
-      </div>
+    <div class = "" style = "width: 80%; margin-left:10%; font-size:20px;">
+      <p style= "float: left;"> <strong>Coffee shops </strong> </p>
+      <p style = "float: right;"><small class = "text-muted"><i> (sorted by ***) </i></small></p>
     </div>
-    <div class = "row" style = "width: 80%; margin-left:10%; ">
-      <div class="col-md-6" style = "border: 1px solid grey">
-        <p> Name from DB </p>
-      </div>
-      <div class="col-md-3" style = "border: 1px solid grey">
-        <p> Location from DB </p>
-      </div>
-      <div class="col-md-3" style = "border: 1px solid grey">
-        <p> Rating from DB </p>
+    <div class="accordion" id="accordionExample">
+      <div class="card" style = "width:80%; margin-left:10%;">
+        <div class="card-header" id="headingOne" style = "display:inline-block;">
+          <h2 class="">
+            <p style = "float: left;">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#a1" aria-expanded="true" aria-controls="a1">
+              Dunkin Donuts
+              </button>
+            </p>
+          </h2>
+            <p style="float: right;">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </p>
+
+        </div>
+
+        <div id="a1" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            <div class="column">
+              <!-- <div style = "">
+                <img src="./english.jpg" alt="Simply Easy Learning" width="150" height="100">
+              </div> -->
+              <p style = "">
+                Location: *** <br>
+                Working hours: ***
+              </p>
+              <!-- <button type="button" >Large button</button> -->
+              <button class="btn btn-primary btn" style = "position: absolute; left:; bottom:0; margin-bottom: 3px;">
+                Add review
+              </button>
+            </div>
+            <div class="column">
+              <p>
+                  <strong style = "text-decoration:;"><i>Menu</i></strong>
+              </p>
+              <table class="table table-hover">
+                <thead>
+                  <!-- <tr>
+                    <th scope="col">m</th>
+                    <th scope="col">Price</th>
+                  </tr> -->
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Vanilla Latte</td>
+                    <td>$3.20</td>
+                  </tr>
+                  <tr>
+                    <td>Another one</td>
+                    <td>$9.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
       </div>
     </div>
 
+    <div class="card" style = "width:80%; margin-left:10%;">
+      <div class="card-header" id="heading2" style = "display:inline-block;">
+        <h2 class="">
+          <p style = "float: left;">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#a2" aria-expanded="true" aria-controls="a2">
+            Dunkin Donuts
+            </button>
+          </p>
+        </h2>
+          <p style="float: right;">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </p>
+
+      </div>
+
+      <div id="a2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample">
+        <div class="card-body">
+          <div class="column">
+            <!-- <div style = "">
+              <img src="./english.jpg" alt="Simply Easy Learning" width="150" height="100">
+            </div> -->
+            <p style = "">
+              Location: *** <br>
+              Working hours: ***
+            </p>
+            <!-- <button type="button" >Large button</button> -->
+            <button class="btn btn-primary btn" style = "position: absolute; left:; bottom:0; margin-bottom: 3px;">
+              Add review
+            </button>
+          </div>
+          <div class="column">
+            <p>
+                <strong style = "text-decoration:;"><i>Menu</i></strong>
+            </p>
+            <table class="table table-hover">
+              <thead>
+                <!-- <tr>
+                  <th scope="col">m</th>
+                  <th scope="col">Price</th>
+                </tr> -->
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Vanilla Latte</td>
+                  <td>$3.20</td>
+                </tr>
+                <tr>
+                  <td>Another one</td>
+                  <td>$9.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </div>
   </div>
+
+
+
+  </div>
+
+
+
+
+  </div>
+
+
 
 <script> 
   var menus = `{{ menus_str }}`

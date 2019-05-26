@@ -4,14 +4,6 @@ body {
   /* font-family: sans-serif; */
 }
 
-.questions {
-  position: relative;
-  text-align: right;
-  vertical-align: baseline;
-  font-size: 15px;
-  color: #4286f4;
-
-}
 
 a {
   color: black;
@@ -23,7 +15,7 @@ a:hover {
 }
 
 #myUL {
-  /* Remove default list styling */
+
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -60,38 +52,8 @@ a:hover {
     margin-right: 10%;
 }
 
-.center {
-  width: 30%;
-  height: 13px;
-  /* text-align: center; */
-  vertical-align: top;
-  padding: 1em 1em;
-  padding-bottom: 2em;
-  font-size: 20px;
-  margin-left: 245px;
-  margin-top: 7px;
-  /* background-color: powderblue; */
-  /* border: 2px solid black; */
-  /* border-radius: 50%; */
-  /* margin: 0 0 20px; */
-}
 
-.center:hover {
-  background-color: #4286f4;
-}
 
-.column {
-  font-size: 25px;
-  float: left;
-  width: 25%;
-  vertical-align: middle;
-  text-align: center;
-  border: 2px solid #6c757d;
-  display: inline-block;
-  height: 100px;
-  padding: 1em 1em;
-  margin: 0 1.8% 20px;
-}
 
 .align-center {
   text-align: center;
@@ -133,18 +95,6 @@ h1 {
   border: none;
 }
 
-.rowmy:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-#search-box {
-  width: 75%;
-  margin-left: 12.5%;
-
-}
-
 
 #top-box {
   padding: 2em;
@@ -169,35 +119,4 @@ h1 {
 }
 
 
-#bell{
-  margin-right: 2em;
-  margin-top: -0.7em;
-  z-index: -50;
-}
 
-#notifPaper{
-  width: 500px;
-  height: 300px;
-  margin-top: 40px;
-  margin-right: 15px;
-  background-color: #F2F3F1;
-  z-index: -70;
-  border-radius: 5px;
-
-}
-
-.list-group-item{
-  background-color: #F2F3F1;
-}
-
-.triangle-up {
-	width: 0px;
-	height: 50px;
-	border-left: 15px solid transparent;
-	border-right: 15px solid transparent;
-	border-bottom: 20px solid #F2F3F1;
-  margin-left: 350px;
-  margin-top: -45px;
-
-
-}
