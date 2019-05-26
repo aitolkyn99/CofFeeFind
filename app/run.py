@@ -110,13 +110,38 @@ def index():
 						customers_str += normal2db(str(row[j])) + ' '
 					print(customers_str);
 				customers_str += '\n' 
-			sql = "select * from ((coffeeshop natural join menu) natural join shoplocation);"	           
-			cursor.execute(sql)
-			shops_with_menu = cursor.fetchall()
-			shop2menu = {}
-			for row in shops_with_menu:
+			        
+			
+			reviewSQL = "select * from ((coffeeshop left join review on coffeeshop.sname = review.sname));"
+			cursor.execute(reviewSQL)
+			coffeeshopReview = cursor.fetchall()
+			coffeeshopReview_str = ''
+			for row in coffeeshopReview:
 				for j in range(0, len(row)):
-					shop2menu
+					coffeeshopReview_str += normal2db(str(row[j])) + ' ';
+				coffeeshopReview_str += '\n'
+			
+
+			menuSQL = "select * from ((coffeeshop  natural left join menu));"
+			cursor.execute(menuSQL)
+			csMenu = cursor.fetchall();
+			csMenu_str = '';
+			for row in csMenu:
+				for j in range(0, len(row)):
+					csMenu_str += normal2db(str(row[j])) + ' ';
+				csMenu_str += '\n'
+			
+
+			locationSQL = "select * from ((coffeeshop  natural left join shoplocation));"
+			cursor.execute(locationSQL);
+			csLocation = cursor.fetchall();
+			csLocation_str = '';
+			for row in csLocation:
+				for j in range(0, len(row)):
+					csLocation_str += normal2db(str(row[j])) + ' ';
+				csLocation_str += '\n'
+
+
 
 
 
@@ -124,7 +149,7 @@ def index():
 
 	finally:
 		db.close()
-	return render_template('index.html', menus_str = menus_str, customers_str=customers_str, coffee_shops_str=coffee_shops_str);
+	return render_template('index.html', locations = csLocation_str, menus = csMenu_str, reviews = coffeeshopReview_str, customers = customers_str);
 	
 if __name__ == "__main__":
     app.run('0.0.0.0', port=5000)
