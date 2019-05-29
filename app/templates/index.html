@@ -63,18 +63,26 @@
   </section>
 
 
-  <iframe class = "align-center" id = "map"
-    width="500"
-    height="400"
-    frameborder="1" style="border:1"
-    src="" allowfullscreen>
-  </iframe>
+
 
   <div class="container-fluid">
+     <div class = "col-md-12">
+      <div class = "row" id = "map">
+        <iframe id = "the__map"
+          align="middle"
+          width="1200"
+          height="500"
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDFUd4bhWCo2UDTGhHxvPUeT-mzwAgFxRM
+          &q=Space+Needle,Seattle+WA" allowfullscreen>
+        </iframe>
+      </div>
+    </div>
     <div class = "" style = "width: 80%; margin-left:10%; font-size:20px;">
       <p style= "float: left;"> <strong>Coffee shops </strong> </p>
       <p style = "float: right;"><small class = "text-muted"><i> (sorted by ***) </i></small></p>
     </div>
+
     <div class="accordion" id="accordionExample">
       <div class="card" style = "width:80%; margin-left:10%;">
         <div class="card-header" id="headingOne" style = "display:inline-block;">
@@ -261,10 +269,13 @@
 
 
 
-<script>
-  var menus = `{{ menus_str }}`
-  var customers = `{{ customers_str }}`
-  var coffeeShops = `{{ coffee_shops_str }}`;
+
+<script> 
+  var menus = `{{ menus }}`
+  var customers = `{{ customers }}`
+  var reviews = `{{  reviews }}`;
+  var locations = `{{  locations }}`;
+
 
 </script>
 <script src="{{ url_for('static', filename = 'js/jquery.min.js') }}" ></script>
