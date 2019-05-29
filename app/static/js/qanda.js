@@ -445,5 +445,13 @@ $(".shopList").on('mouseover','.stars',function(){
 
 })
 
-
-console.log($("#dropdown").value());
+$('a').on('click', function() {
+  var a = this.id;
+  populateEvents()
+  document.getElementById('search-bar').value = parse_string(a);
+  myFunction();
+  $('#heading' + a + ' button').attr("aria-expanded", "true");
+  $('#heading' + a + ' button').removeClass('collapsed');
+  $('#a' + a).addClass('show');
+  $('#a' + a).attr("aria-expanded", "true");
+})
